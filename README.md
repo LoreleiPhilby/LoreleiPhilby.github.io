@@ -9,4 +9,5 @@ images are hotlinked from TasteAtlas, and are not used for a commercial reason.
 The purpose of the webpage is to use JavaScript (no JQuery etc) to verify the form input. 
 All forms, but allergy and date sections, are being tested. 
 Alerts used instead of submit to database. 
+NavBar not linked to actual pages. 
 More info on the JS file included as comments.
