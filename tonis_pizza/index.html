@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--This project simulates a basic pizza ordering site. Please try
+        all the input fields. Two forms were used, one for the selection of the pizzas
+        and one for the online payment. No submit button is used and no data reported anywhere
+        but PLEASE USE 1111111111111111 OR 0123456789012345 AS THE CARD NUMBER AND NOT AN 
+        ACTUAL ONE! Thank you! -->
+        
+        <!-- The following code imports a google font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caprasimo&display=swap" rel="stylesheet">
+        <!--The following links to the css stylesheet-->
+        <link rel="stylesheet" href="Tonis_pizza.css">
+       
+        
+        <title> Toni's Pizza </title>
+       
+         <!--the following links to the Js file -->
+        <script src="Tonis_pizza.js"></script> 
+    </head>
+    <body>
+        <header class="headerSite">
+            <div class="headerLogo">
+                <img class="headerLogoImage" src="https://www.infinitopizzeria.it/wp-content/uploads/2015/04/IMG_9292_1_92-820x455.jpg">
+                <div class="headerLogoText">
+                    TONI'S PIZZA
+                </div>
+            </div>
+            <div class="navbar">
+                <ul>
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#Gallery">Gallery</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                    <li><a href="#About">About</a></li>
+                </ul>
+            </div>
+        </header>
+        
+        <div id="headers">
+            <h1> We only make four kinds of Pizza</h1>
+            <h2> but it's pizza you can take back to Vito!</h2>
+        </div>
+        <form>
+        <table class="p">
+            <tr>
+                <td>
+                    <img class="pizzaImages" src="https://cdn.tasteatlas.com//images/dishes/624715d0c60846f3b210e4ed29f68721.jpg?w=1200">
+                <td>
+                    <img class="pizzaImages" src="https://cdn.tasteatlas.com//images/dishes/ac34ba94ddb84c8eb529ac7ba9d70f72.jpg?w=1200">
+                </td>
+            </tr>
+            <tr>
+                <th> Margherita</th>
+                <th> Marinara</th>
+            </tr>
+            <tr>
+                <td>1 for 6$</td>
+                <td>1 for 5.50$</td>
+            </tr>
+            <tr>
+                <td>2 for 12$</td>
+                <td>2 for 11.00$</td>
+            </tr>
+            <tr>
+                <td>5 for 30$</td>
+                <td>5 for 27.50$</td>
+            </tr>
+            <tr>
+                <td> <input id="margherita" type="number" min="0" max="10"  value="0" onblur="pizza1()"></td>
+                <td> <input id="marinara" type="number" min="0" max="10"  value="0" onblur="pizza2()"></td>
+            </tr>
+            <tr>
+                <td id="msgmargh"> </td>
+                <td id="msgmarin"></td>
+            </tr>
+            <tr>
+                <td>
+                    <img class="pizzaImages" src="https://cdn.tasteatlas.com//images/dishes/e7975313448a401eaab881f977bfadc1.jpg?w=1200">
+                </td>
+                <td>
+                    <img class="pizzaImages" src="https://cdn.tasteatlas.com//images/dishes/09eeee4838eb4d78be8a32972b008927.jpg?w=1200">
+                </td>
+            </tr>
+            <tr>
+                <th> Quattro Formaggi</th>
+                <th> Boscaiola</th>
+            </tr>
+            <tr>
+                <td>1 for 7$</td>
+                <td>1 for 8$</td>
+            </tr>
+            <tr>
+                <td>2 for 14$</td>
+                <td>2 for 16$</td>
+            </tr>
+            <tr>
+                <td>5 for 35$</td>
+                <td>5 for 40$</td>
+            </tr>
+            <tr>
+                <td> <input id="formaggi" type="number" min="0" max="10"  value="0" onblur="pizza3()"></td>
+                <td> <input id="boscaiola" type="number" min="0" max="10" value="0" onblur="pizza4()"></td>
+            </tr>
+            <tr>
+                <td id="msgform"></td>
+                <td id="msgbosc"></td>
+            </tr>
+        </table>
+        </form>
+        <div class="allinp">
+            <p> Please inform us of any allergies!</p><br>
+            <input type="text"> 
+            
+        </div>
+
+        <div class="buttoncontainer">
+            <button onclick="orderNow()">Order Now</button>
+        </div>
+        <div id="hiddendiv" style="display:none">
+            <form>
+                <table class="t">
+                    <tr>
+                        <td id="total"></td>
+                    </tr>
+                    <tr>
+                        <th>Please fill to order</th><br>
+                    </tr>
+                    <tr>
+                        <td><input id="fieldname" type="text" placeholder="Name & Surname" onblur="checkFieldName()"/> </td>
+                        <td id="msgname"></td>
+                    </tr>
+                    <tr>
+                        <td> <input id="fieldaddress" type="text" placeholder="Address" onblur="checkFieldAddress()"> </td>
+                        <td id="msgadd"></td>
+                    </tr>
+                    <tr>
+                        <td> <input id="cnumber" type="text" placeholder="Card Number" onblur="validatenumber()"></td>
+                        <td id="msgcard"></td>
+                    </tr>
+                    <tr> 
+                        <td> <input id="ccv" type="text" placeholder="ccv" onblur="validateccv()"> </td>
+                        <td id="msgccv"></td>
+                    </tr>
+                    <tr>
+                        <td> <input type="date"> <p>Exp.Date</p>  </td>
+                    </tr>
+                   
+                    
+                   
+                </table>
+               
+            </form>
+            <br>
+  
+            <button onclick="Checkout()">Check Out</button>
+        </div>
+
+        
+
+      
+
+        <footer> 
+            <h2><q> Never let anyone know what you are eating,<br> Unless it's Toni's Pizza </q></h2>
+            <h3><cite> Michael Corleone</cite> </h3>
+        </footer>
+         
+       
+    </body>
+    
+</html>
